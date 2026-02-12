@@ -18,17 +18,18 @@ Discover open ports and services in my local network using Nmap and analyze pote
 ---
 
 ## 🛠 Tools Used
-
-| Tool Name      | Description                                                                        | Purpose in Task                                                              |
-| -------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| **Nmap**       | Open-source network scanning tool used for discovering hosts and open ports.       | Used to scan the local network and identify open ports and running services. |
-| **Wireshark**  | Network protocol analyzer that captures and analyzes network traffic in real time. | Used to observe and analyze packets generated during the Nmap scan.          |
-| **Kali Linux** | Security-focused Linux distribution with pre-installed penetration testing tools.  | Used as the operating system to perform network scanning and analysis.       |
-
-
+| Tool Name            | Description                                                                          | Purpose in Task                                                                 |
+| -------------------- | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------- |
+| **Nmap**             | Open-source network scanning tool used for discovering hosts and open ports.         | Used to scan the local network and identify open ports and running services.    |
+| **Wireshark**        | Network protocol analyzer that captures and analyzes network traffic in real time.   | Used to observe and analyze packets generated during the Nmap scan.             |
+| **Kali Linux**       | Security-focused Linux distribution with pre-installed penetration testing tools.    | Used as the operating system to perform network scanning and analysis.          |
+| **Metasploitable 3** | Intentionally vulnerable virtual machine designed for security testing and learning. | Used as a target machine to practice scanning and identify open ports/services. |
 
 
-## 🌐 Step 1: Identify Local IP Range
+
+
+
+## 🌐 Step 1: Identify Local IP Range and active hosts
 
 ```
  command ip a of ifconfig(linux),ipconfig(windows)
@@ -38,11 +39,17 @@ Discover open ports and services in my local network using Nmap and analyze pote
 Detected network range: `192.168.1.0/24`
 
 ---
+## identify live host or active hosts:
+```
+command:nmap -sn 192.168.1.0/24 -oN live_hosts_report
+```
+![ip_range](Screenshot/ip_range.png)
 
-## 🚀 Step 2: Perform TCP SYN Scan
+## 🚀 Step 2: Perform TCP SYN Scan on target machine (metasploitable 3 ubuntu version intentionaly vulnerable best for home pentesting)
+TCP SYN Scan: It sends a SYN packet and waits for a SYN-ACK response without completing the full handshake.after receiving syn+ack packets,it's send reset packet and does not complete three way handshake that's make it faster and stealth
 
 ```
-nmap -sS -sV 192.168.1.0/24 -oN nmap-scan.txt
+nmap -sS -p- 192.168.1.86 -oN target-192.168.1.86-open-port-reports
 ```
 
 Scan results saved in:
