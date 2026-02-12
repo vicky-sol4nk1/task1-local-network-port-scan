@@ -33,7 +33,7 @@ Discover open ports and services in my local network using Nmap and analyze pote
 ```
  command ip a of ifconfig(linux),ipconfig(windows)
 ```
-![ip_range](screenshots/ip_range.png)
+![ip_range](Screenshot/ip_range.png)
 
 Detected network range: `192.168.1.0/24`
 
