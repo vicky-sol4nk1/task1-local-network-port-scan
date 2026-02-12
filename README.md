@@ -45,7 +45,16 @@ command:nmap -sn 192.168.1.0/24 -oN live_hosts_report
 ```
 ![ip_range](Screenshot/live_host.png)
 
-## 🚀 Step 2: Perform TCP SYN Scan on target machine (metasploitable 3 ubuntu version intentionaly vulnerable best for home pentesting)
+active hosts:
+192.168.1.1 
+192.168.1.6 
+192.168.1.22 
+192.168.1.36 
+192.168.1.50
+192.168.1.86
+192.168.1.85
+
+## 🚀 Step 2: Perform TCP SYN Scan for open ports on active hosts one by one
 TCP SYN Scan: It sends a SYN packet and waits for a SYN-ACK response without completing the full handshake.after receiving syn+ack packets,it's send reset packet and does not complete three way handshake that's make it faster and stealth
 
 ![syn-scan](Screenshot/synscanning1.png)
@@ -137,14 +146,12 @@ Wireshark allows packet-level analysis to understand how network communication a
 
 ---
 
-## 📚 Key Concepts Learned
-
-* TCP SYN Scan
-* Network Reconnaissance
-* Port Exposure
-* Basic Security Hardening
-
----
+## Conclusion & Learning Outcomes
+- Gained hands-on experience with Nmap for host discovery and stealthy TCP SYN scanning.
+- Understood how open ports expose services (especially on vulnerable systems like Metasploitable 3).
+- Learned to identify risks from common services (e.g., Telnet clear-text, SMB exploits, weak web apps).
+- Realized the value of limiting deep scans to specific targets and using tools like Wireshark for packet verification.
+- Key takeaway: Minimize unnecessary open ports and always patch/secure services — even in home/lab networks.
 
 
 
