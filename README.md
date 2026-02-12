@@ -66,17 +66,9 @@ TCP SYN Scan: It sends a SYN packet and waits for a SYN-ACK response without com
 ![syn-scan](Screenshot/scan1.png)
 ![syn-scan](Screenshot/scan2.png)
 
-
-```
-finding open ports 
-nmap -sS -p- 192.168.1.86 -oN target-192.168.1.86-open-port-reports
-```
-![open-ports](Screenshot/port-scan.png)
-
-
 ---
 target:192.168.1.86 metasploitalble 3
- running service version detection
+finding open ports and  running service version detection
  ![open-ports](Screenshot/service-version.png)
 
 ---
