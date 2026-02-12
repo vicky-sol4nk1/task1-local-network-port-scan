@@ -89,6 +89,52 @@ finding open ports and  running service version detection
 | 8180/tcp | tcp      | open  | http-proxy    | Apache Tomcat Manager Interface                                         | Critical             | Default Tomcat credentials → Remote Code Execution |
 | Others*  | tcp      | open  | Various       | IRC (6667), VNC (5900), Redis (6379), etc. (if present)                | High-Critical        | Unauthenticated access, RCE, data exposure |
 
+
+
+Perfect 👍 now I can clearly see all active hosts from your full scan.
+
+Based on your screenshot (`nmap 192.168.1.0/24 -O -sS -T5`), here is the **complete summary table of active hosts and their open ports** 👇
+
+---
+
+## 📊 Local Network Active Hosts Summary
+
+| Host IP          | Status | Open Ports                       | Services                                    | OS Detection                              | Risk Level |
+| ---------------- | ------ | -------------------------------- | ------------------------------------------- | ----------------------------------------- | ---------- |
+| **192.168.1.1**  | Up     | 53, 80, 443                      | DNS, HTTP, HTTPS                            | Linux 3.x (Huawei device – likely Router) | Medium     |
+| **192.168.1.7**  | Up     | None (1000 closed)               | No exposed services                         | OS not identified                         | Low        |
+| **192.168.1.50** | Up     | None (1000 filtered)             | No visible services                         | OS not identified                         | Low        |
+| **192.168.1.85** | Up     | None (1000 closed)               | No exposed services                         | OS not identified                         | Low        |
+| **192.168.1.86** | Up     | 21, 22, 80, 445, 631, 3306, 8080 | FTP, SSH, HTTP, SMB, IPP, MySQL, HTTP-Proxy | Linux (3.x–4.x)                           | 🔴 High    |
+
+---
+
+## 🔎 Network Overview
+
+* Total IPs scanned: **256**
+* Active hosts found: **5**
+* Hosts with exposed services: **2 (192.168.1.1 and 192.168.1.86)**
+* Most exposed machine: **192.168.1.86 (Metasploitable VM)**
+* Router detected at: **192.168.1.1 (Huawei device)**
+
+---
+
+## 🚨 Risk Analysis
+
+### 🔹 192.168.1.1 (Router)
+
+* DNS, HTTP, HTTPS open
+* Web management interface exposed
+* Should restrict admin panel access
+
+### 🔹 192.168.1.86 (Vulnerable VM)
+
+* Multiple critical services exposed
+* SMB + FTP + MySQL increases attack surface
+* High exploitation probability
+
+---
+
 ## wireshark syn scan analysis with nmap syn scan on port 80
 ![open-ports](Screenshot/wireshark.png)
 
