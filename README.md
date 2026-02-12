@@ -79,7 +79,8 @@ nmap -sS -p- 192.168.1.86 -oN target-192.168.1.86-open-port-reports
 | 8180/tcp | tcp      | open  | http-proxy    | Apache Tomcat Manager Interface                                         | Critical             | Default Tomcat credentials → Remote Code Execution |
 | Others*  | tcp      | open  | Various       | IRC (6667), VNC (5900), Redis (6379), etc. (if present)                | High-Critical        | Unauthenticated access, RCE, data exposure |
 
-
+## wireshark syn scan analysis with nmap syn scan on port 80
+![open-ports](Screenshot/wireshark.png)
 
 ## ⚠️ Security Risks Identified
 
