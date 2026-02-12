@@ -47,16 +47,23 @@ command:nmap -sn 192.168.1.0/24 -oN live_hosts_report
 
 active hosts:
 192.168.1.1 
+
 192.168.1.6 
+
 192.168.1.22 
+
 192.168.1.36 
+
 192.168.1.50
+
 192.168.1.86
+
 192.168.1.85
 
 ## 🚀 Step 2: Perform TCP SYN Scan for open ports on active hosts one by one
 TCP SYN Scan: It sends a SYN packet and waits for a SYN-ACK response without completing the full handshake.after receiving syn+ack packets,it's send reset packet and does not complete three way handshake that's make it faster and stealth
-
+![syn-scan](Screenshot/scan1.png)
+![syn-scan](Screenshot/scan2.png)
 ![syn-scan](Screenshot/synscanning1.png)
 
 ```
