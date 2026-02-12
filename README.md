@@ -19,24 +19,14 @@ Discover open ports and services in my local network using Nmap and analyze pote
 
 ## 🛠 Tools Used
 
-* Nmap:
-* Wireshark 
-* Kali Linux / Ubuntu
+| Tool Name      | Description                                                                        | Purpose in Task                                                              |
+| -------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| **Nmap**       | Open-source network scanning tool used for discovering hosts and open ports.       | Used to scan the local network and identify open ports and running services. |
+| **Wireshark**  | Network protocol analyzer that captures and analyzes network traffic in real time. | Used to observe and analyze packets generated during the Nmap scan.          |
+| **Kali Linux** | Security-focused Linux distribution with pre-installed penetration testing tools.  | Used as the operating system to perform network scanning and analysis.       |
 
----
 
-## bfrief descriptio
-* nmap: Nmap (Network Mapper) is a free and open-source network scanning tool used for network discovery and security auditing.
 
-It helps identify:
-
-Active hosts on a network
-
-Open and closed ports
-
-Running services and their versions
-
-Operating system information
 
 ## 🌐 Step 1: Identify Local IP Range
 
