@@ -54,7 +54,7 @@ TCP SYN Scan: It sends a SYN packet and waits for a SYN-ACK response without com
 finding open ports
 nmap -sS -p- 192.168.1.86 -oN target-192.168.1.86-open-port-reports
 ```
-![open-ports](Screenshot/port-scan)
+![open-ports](Screenshot/port-scan.png)
 
 
 ---
