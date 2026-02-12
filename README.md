@@ -43,7 +43,7 @@ Detected network range: `192.168.1.0/24`
 ```
 command:nmap -sn 192.168.1.0/24 -oN live_hosts_report
 ```
-![ip_range](Screenshot/live.host.png)
+![ip_range](Screenshot/live_host.png)
 
 ## 🚀 Step 2: Perform TCP SYN Scan on target machine (metasploitable 3 ubuntu version intentionaly vulnerable best for home pentesting)
 TCP SYN Scan: It sends a SYN packet and waits for a SYN-ACK response without completing the full handshake.after receiving syn+ack packets,it's send reset packet and does not complete three way handshake that's make it faster and stealth
