@@ -2,7 +2,9 @@
 Task 1 - Scan our  Local Network for Open Ports using Nmap
 
 
-
+**Scan Scope Note**  
+- Performed host discovery on the full local network (192.168.1.0/24) to identify live devices.  
+- Conducted detailed TCP SYN + version scanning only on the intentionally vulnerable Metasploitable 3 VM (192.168.1.86), as it provides rich, educational exposure of services and risks. Normal home devices typically show minimal/no open ports.
 
 
 
