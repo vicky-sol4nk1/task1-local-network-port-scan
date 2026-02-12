@@ -51,26 +51,19 @@ TCP SYN Scan: It sends a SYN packet and waits for a SYN-ACK response without com
 ![syn-scan](Screenshot/synscanning1.png)
 
 ```
+finding open ports
 nmap -sS -p- 192.168.1.86 -oN target-192.168.1.86-open-port-reports
 ```
+![open-ports](Screenshot/port-scan)
 
-Scan results saved in:
-
-```
-nmap-scan.txt
-```
 
 ---
-
-## 📊 Scan Results Summary
-
-| IP Address   | Open Port | Service | Risk                |
-| ------------ | --------- | ------- | ------------------- |
-| 192.168.1.1  | 80        | HTTP    | Web vulnerabilities |
-| 192.168.1.5  | 22        | SSH     | Brute force risk    |
-| 192.168.1.10 | 445       | SMB     | SMB exploits        |
+ running service version detection
+ ![open-ports](Screenshot/service-version.png)
 
 ---
+#syn-scan result
+
 
 ## ⚠️ Security Risks Identified
 
